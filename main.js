@@ -37,11 +37,11 @@ window.addEventListener("keydown", my_keydown);
 function my_keydown(e)
 {
 	keyPressed = e.keyCode;
-	console.log(keyPressed);}
+	console.log(keyPressed);   
 	
 
-	if ((ball_y==hole_y)&&ball_x==hole_x) {
-		Canvas.remove(ball_obj);
+	if ((ball_y==hole_y)&& (ball_x==hole_x)){
+		canvas.remove(ball_obj);
 		document.getElementById("hd3").innerHTML=" You Have Hit The Goal !!! ";
 		document.getElementById("myCanvas").style.borderColor="red";
 	} 
@@ -66,13 +66,13 @@ function my_keydown(e)
 		{
 			right();
 			console.log("right");
-		}
-	
+		} } 
+   }
 	
 	function up()
 	{
-		if (ball_y<=450) {
-		ball_y = ball_y + block_image_height;
+		if (ball_y>50) {
+		ball_y = ball_y - block_image_height;
 		console.log("bloack image height =" + block_image_height);
 		console.log("when left key is pressed , X =" + ball_x +"Y ="+ ball_y);
 			canvas.remove(ball_obj);
@@ -82,8 +82,8 @@ function my_keydown(e)
 
 	function down()
 	{
-		if (ball_y > 50) {
-			ball_y = ball_y - block_image_height;
+		if (ball_y <=450) {
+			ball_y = ball_y + block_image_height;
 			console.log("bloack image height =" + block_image_height);
 			console.log("when left key is pressed , X =" + ball_x +"Y ="+ ball_y);
 				canvas.remove(ball_obj);
@@ -115,6 +115,6 @@ function my_keydown(e)
 		}
 	}
 	
-}
+
 
 
